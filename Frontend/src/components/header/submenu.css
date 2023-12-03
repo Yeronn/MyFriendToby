@@ -1,0 +1,30 @@
+.submenu {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  color: #03045e;
+  background-color: #99defd;
+  border-radius: 5px;
+}
+
+.submenu--option {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.submenu--option:hover {
+  background-color: #ffffff;
+}
+
+.submenu--option > svg {
+  width: 33px;
+}
+
+.submenu--option > span {
+  font-size: 1.6rem;
+  font-weight: 600;
+}

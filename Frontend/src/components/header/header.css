@@ -7,6 +7,7 @@
   padding: 6px;
   gap: 10px;
   list-style: none;
+  background-color: #99defd;
 }
 /* #99defd */
 .nav-logo {
@@ -83,21 +84,23 @@
   border: 1px solid #03045e;
 }
 
-@media (min-width: 500px){
-  .nav{
-    background-color: #99defd;
-  }
+.nav-options > svg {
+  width: 35px;
+  cursor: pointer;
+}
 
+@media (min-width: 500px){
   .search-bar{
     height: 40px;
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
   .nav {
     justify-content: space-between;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-bottom: 0;
+    padding-right: 40px;
+    padding-left: 90px;
   }
 
   .nav-logo > img {

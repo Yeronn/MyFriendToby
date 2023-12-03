@@ -8,7 +8,12 @@ export default function Login ({ handleChangeUser, handleShowInterface }) {
 
   const handleLogin = async (event) => {
     event.preventDefault()
-    // console.log('Iniciando sesion')
+    console.log('Iniciando sesion')
+    const user = {
+      email,
+      password
+    }
+    handleChangeUser(user)
     // try {
     //   const user = await loginService.login({
     //     email,

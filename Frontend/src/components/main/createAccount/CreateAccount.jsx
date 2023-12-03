@@ -1,35 +1,27 @@
+import { useState } from 'react'
 import './createAccount.css'
-import { PawIcon, UserCircleIcon } from '../../Icons'
+import SelectCreateAccount from './SelectAccountType'
+import CreateAccountForms from './createAccountForms/CreateAccountForms'
 
 export default function CreateAccount ({ handleShowInterface }) {
+  const [selectedAccountType, setSelectedAccountType] = useState(false)
+  const [selectedUserForm, setSelectedUserForm] = useState(false)
   const handleShowHome = () => {
     handleShowInterface('Home')
   }
   const handleShowLogin = () => {
     handleShowInterface('Login')
   }
+  const handleShowForm = (form) => {
+    setSelectedAccountType(!selectedAccountType)
+    setSelectedUserForm(form)
+  }
   return (
     <section className='create-account'>
-      <div className='logo-container' onClick={handleShowHome}>
-        <img src='./../../../../public/logo.png' alt='Logotipo de la pagina web' />
-      </div>
-      <div className='account-type-container'>
-        <h3>¿Qué tipo de cuenta quieres crear?</h3>
-        <ul className='account-types'>
-          <li className='account-type-card user-type'>
-            <span className='account-type-card--icon-container'><UserCircleIcon /></span>
-            <span>Usuario</span>
-          </li>
-          <li className='account-type-card vet-type'>
-            <span><PawIcon /></span>
-            <span>Veterinaria</span>
-          </li>
-        </ul>
-      </div>
-      <div className='create-account--login'>
-        <p>¿Ya tienes una cuenta?</p>
-        <span onClick={handleShowLogin}>¡Inicia sesión!</span>
-      </div>
+      {(!selectedAccountType) &&
+        <SelectCreateAccount handleShowHome={handleShowHome} handleShowLogin={handleShowLogin} handleShowForm={handleShowForm} />}
+      {selectedAccountType &&
+        <CreateAccountForms selectedUserForm={selectedUserForm} handleShowHome={handleShowHome} />}
     </section>
   )
 }
